@@ -1,0 +1,262 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[     10604,        254]
+NotebookOptionsPosition[      7492,        204]
+NotebookOutlinePosition[      7886,        220]
+CellTagsIndexPosition[      7843,        217]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Your Name", "Title",
+ CellChangeTimes->{{3.803564939501155*^9, 
+  3.803564941771452*^9}},ExpressionUUID->"e92ca81d-1699-41fc-85b4-\
+1501de5057c8"],
+
+Cell["Your project description", "Subtitle",
+ CellChangeTimes->{{3.803564947613463*^9, 
+  3.8035649531785088`*^9}},ExpressionUUID->"aaddb601-4427-4488-a7f6-\
+7cc757746613"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Ultimate thing till now", "Section"]], "Subsection",
+ CellChangeTimes->{{3.803564246081727*^9, 3.8035642588741817`*^9}, {
+  3.803564400980057*^9, 3.803564409770204*^9}, {3.8035647649043922`*^9, 
+  3.803564770456115*^9}, {3.803564959034783*^9, 
+  3.803564962374186*^9}},ExpressionUUID->"6c3c85f3-d8f9-4c47-845f-\
+13bb2bcc105d"],
+
+Cell["\<\
+This is what SW is most interested in.
+Please emphasize this part as much as possible \
+\>", "Text",
+ CellChangeTimes->{{3.803564261153791*^9, 3.803564263259472*^9}, 
+   3.803564925626545*^9, {3.803566014601223*^9, 
+   3.803566052759632*^9}},ExpressionUUID->"ea919333-8c33-4517-8ce4-\
+81888eee8f58"],
+
+Cell[BoxData["code"], "Input",
+ CellChangeTimes->{{3.803564278981933*^9, 3.803564279601172*^9}, 
+   3.803564906843051*^9},ExpressionUUID->"d7df7d9e-8d01-443a-b0d3-\
+3aedf38fee9a"],
+
+Cell["< code' s output (if interesting) >", "Text",
+ CellChangeTimes->{{3.803564882612481*^9, 
+  3.803564889585059*^9}},ExpressionUUID->"b335acd2-3266-433d-963f-\
+0f2a196a238d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Project steps so far", "Subsection",
+ CellChangeTimes->{{3.803566121210416*^9, 3.80356613847779*^9}, {
+  3.803566310777347*^9, 
+  3.803566311551049*^9}},ExpressionUUID->"d9e3acc6-26d0-47ca-9aeb-\
+0aef6bf2a0db"],
+
+Cell["[example step name] Trying to see what WL can do right now", \
+"ItemNumbered",
+ CellChangeTimes->{{3.803564487432849*^9, 3.803564498985468*^9}, 
+   3.803564756201288*^9, {3.803565006842697*^9, 3.803565007215085*^9}, {
+   3.80356503931562*^9, 
+   3.803565049192316*^9}},ExpressionUUID->"b8fbf912-fb6c-4026-8bab-\
+bb2c5a687cff"],
+
+Cell["A one line explanation of the code below", "Text",
+ CellChangeTimes->{{3.803564261153791*^9, 3.803564263259472*^9}, {
+  3.803564366506822*^9, 3.803564372873328*^9}, {3.803564910426011*^9, 
+  3.803564916366551*^9}},ExpressionUUID->"2c781e4a-f15a-4ca5-943f-\
+b552913d61f7"],
+
+Cell[BoxData["code"], "Input",
+ CellChangeTimes->{{3.803564278981933*^9, 3.803564279601172*^9}, {
+  3.80356489425741*^9, 
+  3.80356490139716*^9}},ExpressionUUID->"8d210c59-7e82-40ec-9d94-\
+a1314267ab49"],
+
+Cell["< code' s output (if interesting) >", "Text",
+ CellChangeTimes->{{3.803564882612481*^9, 
+  3.803564889585059*^9}},ExpressionUUID->"7981331e-ac2a-46a5-b670-\
+b4007baa6a38"],
+
+Cell["\<\
+[example step name] Trying to get image corners recognise stars\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.803564246081727*^9, 3.8035642588741817`*^9}, {
+   3.8035643458816547`*^9, 3.803564356731793*^9}, {3.80356444656437*^9, 
+   3.803564472426588*^9}, 3.803564758655916*^9, {3.803565037540663*^9, 
+   3.8035650519881163`*^9}},ExpressionUUID->"38d097e6-3a52-4afe-84d3-\
+7bcc2c171522"],
+
+Cell["A one line explanation of the code below", "Text",
+ CellChangeTimes->{{3.803564261153791*^9, 3.803564263259472*^9}, {
+   3.803564366506822*^9, 3.803564372873328*^9}, 
+   3.803564918470841*^9},ExpressionUUID->"f82e984b-9826-4787-8a26-\
+c750229d7ddf"],
+
+Cell[BoxData["code"], "Input",
+ CellChangeTimes->{{3.803564278981933*^9, 3.803564279601172*^9}, 
+   3.803564903395054*^9},ExpressionUUID->"2f202d10-e7a2-4e00-8443-\
+6cd92cb011bd"],
+
+Cell["< code' s output (if interesting) >", "Text",
+ CellChangeTimes->{{3.803564882612481*^9, 
+  3.803564889585059*^9}},ExpressionUUID->"acb8e9eb-25e4-4180-9be6-\
+56308de80a9f"],
+
+Cell["[example step name] Trying to get red/blue colors", "ItemNumbered",
+ CellChangeTimes->{{3.803564246081727*^9, 3.8035642588741817`*^9}, {
+   3.8035644479845448`*^9, 3.8035644809621487`*^9}, 3.803564759162562*^9, {
+   3.803565021474957*^9, 
+   3.803565053814266*^9}},ExpressionUUID->"4f76719e-4348-424e-b03d-\
+324c9c3ff76c"],
+
+Cell["A one line explanation of the code below", "Text",
+ CellChangeTimes->{{3.803564261153791*^9, 3.803564263259472*^9}, {
+  3.803564920284575*^9, 
+  3.8035649229006033`*^9}},ExpressionUUID->"64fa0fe7-4183-4c78-86dc-\
+df5bc7601912"],
+
+Cell[BoxData["code"], "Input",
+ CellChangeTimes->{{3.803564278981933*^9, 3.803564279601172*^9}, 
+   3.803564904216748*^9},ExpressionUUID->"f6f42304-e443-4559-b12c-\
+378328ec2eb4"],
+
+Cell["< code' s output (if interesting) >", "Text",
+ CellChangeTimes->{{3.803564882612481*^9, 
+  3.803564889585059*^9}},ExpressionUUID->"39f5cddc-7c1b-4514-bdf7-\
+a581d00d50b7"],
+
+Cell["[example step name] Trying to get red/blue colors", "ItemNumbered",
+ CellChangeTimes->{{3.803564246081727*^9, 3.8035642588741817`*^9}, {
+   3.8035644479845448`*^9, 3.8035644809621487`*^9}, 3.803564759162562*^9, {
+   3.803565021474957*^9, 
+   3.803565053814266*^9}},ExpressionUUID->"eb6ca929-7a16-4c0b-9e1f-\
+479039a1b11d"],
+
+Cell["A one line explanation of the code below", "Text",
+ CellChangeTimes->{{3.803564261153791*^9, 3.803564263259472*^9}, 
+   3.8035649237291107`*^9},ExpressionUUID->"16211376-b9fe-480a-8394-\
+36a606e00566"],
+
+Cell[BoxData["code"], "Input",
+ CellChangeTimes->{{3.803564278981933*^9, 3.803564279601172*^9}, 
+   3.8035649053783293`*^9},ExpressionUUID->"07117486-9fd0-45c0-9c91-\
+776ba4688096"],
+
+Cell["< code' s output (if interesting) >", "Text",
+ CellChangeTimes->{{3.803564882612481*^9, 
+  3.803564889585059*^9}},ExpressionUUID->"aa6693c9-ca8c-4614-baba-\
+905f0a8613da"],
+
+Cell["[example step name] Trying to get red/blue colors", "ItemNumbered",
+ CellChangeTimes->{{3.803564246081727*^9, 3.8035642588741817`*^9}, {
+   3.8035644479845448`*^9, 3.8035644809621487`*^9}, 3.803564759162562*^9, {
+   3.803565021474957*^9, 
+   3.803565053814266*^9}},ExpressionUUID->"9c8da0c7-6728-4e35-b755-\
+ab16d4cf4b5a"],
+
+Cell["A one line explanation of the code below", "Text",
+ CellChangeTimes->{{3.803564261153791*^9, 3.803564263259472*^9}, 
+   3.8035649245026407`*^9},ExpressionUUID->"046a4534-15a1-418f-ad98-\
+dc42755538d6"],
+
+Cell[BoxData["code"], "Input",
+ CellChangeTimes->{{3.803564278981933*^9, 3.803564279601172*^9}, {
+  3.8035649061137733`*^9, 
+  3.803564933105919*^9}},ExpressionUUID->"8127eec7-d77c-4e94-8a56-\
+fca879ad656f"],
+
+Cell["< code' s output (if interesting) >", "Text",
+ CellChangeTimes->{{3.803564882612481*^9, 
+  3.803564889585059*^9}},ExpressionUUID->"afa57496-0ca4-49de-a6cf-\
+d9797378fa0e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Future step(s)", "Subsection",
+ CellChangeTimes->{
+  3.8035658136476994`*^9, {3.803566317383244*^9, 
+   3.80356631808911*^9}},ExpressionUUID->"5df7c924-80c1-4ac7-ba96-\
+59eeeb8db3cf"],
+
+Cell["Next step(s)", "ItemNumbered",
+ CellChangeTimes->{{3.803564752189857*^9, 3.8035647529797077`*^9}, {
+   3.8035649707804956`*^9, 3.803564976755821*^9}, 
+   3.803565808701797*^9},ExpressionUUID->"1d0e45b2-4d1c-4325-8c04-\
+1b4784d51375"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{Automatic, 68}, {49, Automatic}},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (March 20, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"e8bab188-910a-4be3-b164-233d7d3617b2"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[583, 22, 152, 3, 98, "Title",ExpressionUUID->"e92ca81d-1699-41fc-85b4-1501de5057c8"],
+Cell[738, 27, 172, 3, 53, "Subtitle",ExpressionUUID->"aaddb601-4427-4488-a7f6-7cc757746613"],
+Cell[CellGroupData[{
+Cell[935, 34, 350, 5, 64, "Subsection",ExpressionUUID->"6c3c85f3-d8f9-4c47-845f-13bb2bcc105d"],
+Cell[1288, 41, 309, 7, 58, "Text",ExpressionUUID->"ea919333-8c33-4517-8ce4-81888eee8f58"],
+Cell[1600, 50, 179, 3, 30, "Input",ExpressionUUID->"d7df7d9e-8d01-443a-b0d3-3aedf38fee9a"],
+Cell[1782, 55, 177, 3, 35, "Text",ExpressionUUID->"b335acd2-3266-433d-963f-0f2a196a238d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1996, 63, 216, 4, 54, "Subsection",ExpressionUUID->"d9e3acc6-26d0-47ca-9aeb-0aef6bf2a0db"],
+Cell[2215, 69, 332, 6, 32, "ItemNumbered",ExpressionUUID->"b8fbf912-fb6c-4026-8bab-bb2c5a687cff"],
+Cell[2550, 77, 277, 4, 35, "Text",ExpressionUUID->"2c781e4a-f15a-4ca5-943f-b552913d61f7"],
+Cell[2830, 83, 203, 4, 30, "Input",ExpressionUUID->"8d210c59-7e82-40ec-9d94-a1314267ab49"],
+Cell[3036, 89, 177, 3, 35, "Text",ExpressionUUID->"7981331e-ac2a-46a5-b670-b4007baa6a38"],
+Cell[3216, 94, 395, 7, 32, "ItemNumbered",ExpressionUUID->"38d097e6-3a52-4afe-84d3-7bcc2c171522"],
+Cell[3614, 103, 255, 4, 35, "Text",ExpressionUUID->"f82e984b-9826-4787-8a26-c750229d7ddf"],
+Cell[3872, 109, 179, 3, 30, "Input",ExpressionUUID->"2f202d10-e7a2-4e00-8443-6cd92cb011bd"],
+Cell[4054, 114, 177, 3, 35, "Text",ExpressionUUID->"acb8e9eb-25e4-4180-9be6-56308de80a9f"],
+Cell[4234, 119, 328, 5, 32, "ItemNumbered",ExpressionUUID->"4f76719e-4348-424e-b03d-324c9c3ff76c"],
+Cell[4565, 126, 233, 4, 35, "Text",ExpressionUUID->"64fa0fe7-4183-4c78-86dc-df5bc7601912"],
+Cell[4801, 132, 179, 3, 30, "Input",ExpressionUUID->"f6f42304-e443-4559-b12c-378328ec2eb4"],
+Cell[4983, 137, 177, 3, 35, "Text",ExpressionUUID->"39f5cddc-7c1b-4514-bdf7-a581d00d50b7"],
+Cell[5163, 142, 328, 5, 32, "ItemNumbered",ExpressionUUID->"eb6ca929-7a16-4c0b-9e1f-479039a1b11d"],
+Cell[5494, 149, 207, 3, 35, "Text",ExpressionUUID->"16211376-b9fe-480a-8394-36a606e00566"],
+Cell[5704, 154, 181, 3, 30, "Input",ExpressionUUID->"07117486-9fd0-45c0-9c91-776ba4688096"],
+Cell[5888, 159, 177, 3, 35, "Text",ExpressionUUID->"aa6693c9-ca8c-4614-baba-905f0a8613da"],
+Cell[6068, 164, 328, 5, 32, "ItemNumbered",ExpressionUUID->"9c8da0c7-6728-4e35-b755-ab16d4cf4b5a"],
+Cell[6399, 171, 207, 3, 35, "Text",ExpressionUUID->"046a4534-15a1-418f-ad98-dc42755538d6"],
+Cell[6609, 176, 207, 4, 30, "Input",ExpressionUUID->"8127eec7-d77c-4e94-8a56-fca879ad656f"],
+Cell[6819, 182, 177, 3, 35, "Text",ExpressionUUID->"afa57496-0ca4-49de-a6cf-d9797378fa0e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7033, 190, 189, 4, 54, "Subsection",ExpressionUUID->"5df7c924-80c1-4ac7-ba96-59eeeb8db3cf"],
+Cell[7225, 196, 239, 4, 32, "ItemNumbered",ExpressionUUID->"1d0e45b2-4d1c-4325-8c04-1b4784d51375"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
