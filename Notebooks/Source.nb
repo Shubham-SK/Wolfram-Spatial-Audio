@@ -1,0 +1,367 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13199,        359]
+NotebookOptionsPosition[     12234,        338]
+NotebookOutlinePosition[     12573,        353]
+CellTagsIndexPosition[     12530,        350]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"MaxGridSize", "[", 
+    RowBox[{"c_", ",", "\[Omega]_", ",", "Resolution_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "\[Lambda]", "}"}], ",", 
+     RowBox[{
+      RowBox[{"\[Lambda]", "=", 
+       RowBox[{"2", " ", "\[Pi]", " ", 
+        RowBox[{"c", "/", "\[Omega]"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"\[Lambda]", "/", "Resolution"}]}]}], "]"}]}], "Code"]], "Code",\
+
+ CellLabel->"In[83]:=",ExpressionUUID->"abefec7a-7db8-4507-b314-b6432d8eb278"],
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"Options", "[", "AcousticsOptions", "]"}], "=", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Resolution\>\"", "\[Rule]", "12"}], "}"}]}], ";"}], 
+  "Code"], "\n", 
+ StyleBox[
+  RowBox[{
+   RowBox[{"AcousticsOptions", "[", 
+    RowBox[{"c_", ",", "\[Omega]_", ",", 
+     RowBox[{"opts", ":", 
+      RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], ":=", 
+   RowBox[{"Sequence", "[", 
+    RowBox[{"Method", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<PDEDiscretization\>\"", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<FiniteElement\>\"", ",", 
+         RowBox[{"\"\<MeshOptions\>\"", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"\"\<MaxCellMeasure\>\"", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"\"\<Length\>\"", "\[Rule]", 
+              RowBox[{"MaxGridSize", "[", 
+               RowBox[{"c", ",", "\[Omega]", ",", 
+                RowBox[{"OptionValue", "[", "\"\<Resolution\>\"", "]"}]}], 
+               "]"}]}], "}"}]}], "}"}]}]}], "}"}]}], "}"}]}], "]"}]}], 
+  "Code"]}], "Code",
+ CellLabel->"In[49]:=",ExpressionUUID->"51f3703a-79d7-46e1-aaf3-28d610dc57a5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RegularizedDelta", "[", 
+   RowBox[{"\[Gamma]_", ",", "X_List", ",", "Xs_List"}], "]"}], ":=", 
+  RowBox[{"Piecewise", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Times", "@@", 
+        RowBox[{"Thread", "[", 
+         RowBox[{
+          RowBox[{"1", "/", 
+           RowBox[{"(", 
+            RowBox[{"4", " ", "\[Gamma]"}], ")"}]}], " ", 
+          RowBox[{"(", 
+           RowBox[{"1", "+", 
+            RowBox[{"Cos", "[", 
+             RowBox[{
+              RowBox[{"\[Pi]", "/", 
+               RowBox[{"(", 
+                RowBox[{"2", " ", "\[Gamma]"}], ")"}]}], " ", 
+              RowBox[{"(", 
+               RowBox[{"X", "-", "Xs"}], ")"}]}], "]"}]}], ")"}]}], "]"}]}], 
+       ",", 
+       RowBox[{"And", "@@", 
+        RowBox[{"Thread", "[", 
+         RowBox[{
+          RowBox[{"RealAbs", "[", 
+           RowBox[{"X", "-", "Xs"}], "]"}], "\[LessEqual]", 
+          RowBox[{"2", " ", "\[Gamma]"}]}], "]"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "True"}], "}"}]}], "}"}], "]"}]}]], "Code",
+ CellChangeTimes->{3.803821101236861*^9},
+ CellLabel->"In[51]:=",ExpressionUUID->"ef9b7c98-288a-4c55-bf78-4e369a384c47"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   SubscriptBox["c", "air"], "=", 
+   RowBox[{"QuantityMagnitude", "[", 
+    RowBox[{"ThermodynamicData", "[", 
+     RowBox[{"\"\<Air\>\"", ",", "\"\<SoundSpeed\>\""}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["\[Rho]", "air"], "=", 
+   RowBox[{"QuantityMagnitude", "[", 
+    RowBox[{"ThermodynamicData", "[", 
+     RowBox[{"\"\<Air\>\"", ",", "\"\<Density\>\""}], "]"}], "]"}]}], 
+  ";"}]}], "Code",
+ CellChangeTimes->{{3.803779001186414*^9, 3.803779067054056*^9}, {
+  3.803779132635582*^9, 3.8037791420536118`*^9}},
+ CellLabel->"In[52]:=",
+ CellID->1677618085,ExpressionUUID->"e7992c0f-b63a-4a3e-ac0a-61e2ef09a7e2"],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"h", "[", "\[Omega]_", "]"}], " ", ":=", " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"MaxGridSize", "[", 
+    RowBox[{
+     SubscriptBox["c", "air"], ",", " ", "\[Omega]", ",", " ", "12"}], 
+    "]"}]}], "Input"]], "Code",
+ CellLabel->"In[54]:=",ExpressionUUID->"9ddf05be-aff5-4eb8-b92a-27cdf9295f7c"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   OverscriptBox["Q", "~"], "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Q", "[", 
+    RowBox[{"\[Omega]_", ",", " ", "X_List", ",", " ", "Xs_List"}], "]"}], 
+   " ", ":=", " ", "\n", "  ", 
+   RowBox[{
+    RowBox[{"RegularizedDelta", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"h", "[", "\[Omega]", "]"}], "/", "2"}], ",", " ", "X", ",", 
+      " ", "Xs"}], "]"}], "*", 
+    OverscriptBox["Q", "~"]}]}], ";"}]}], "Code",
+ CellLabel->"In[55]:=",ExpressionUUID->"dfcf64fe-30b8-4811-b67c-b45a14dd51b9"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "AcousticModel", "]"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Note", " ", "the"}], "-", 
+    RowBox[{"sign", " ", "in", " ", "the", " ", "operator"}]}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AcousticModel", "[", 
+    RowBox[{"p_", ",", "X_List", ",", "\[Rho]_", ",", 
+     RowBox[{"{", 
+      RowBox[{"Q_", ",", "F_"}], "}"}]}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "factor"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"factor", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "1"}], "/", "\[Rho]"}], "*", 
+        RowBox[{"IdentityMatrix", "[", 
+         RowBox[{"Length", "[", "X", "]"}], "]"}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"a", "=", 
+       RowBox[{"PiecewiseExpand", "[", 
+        RowBox[{"Piecewise", "[", 
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{"factor", ",", "True"}], "}"}], "}"}], "]"}], "]"}]}], ";",
+       "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Inactive", "[", "Div", "]"}], "[", 
+        RowBox[{
+         RowBox[{"a", ".", 
+          RowBox[{
+           RowBox[{"Inactive", "[", "Grad", "]"}], "[", 
+           RowBox[{"p", ",", "X"}], "]"}]}], ",", "X"}], "]"}], "-", 
+       RowBox[{
+        RowBox[{"Inactive", "[", "Div", "]"}], "[", 
+        RowBox[{
+         RowBox[{"F", "/", "\[Rho]"}], ",", "X"}], "]"}], "-", "Q"}]}]}], 
+    "]"}]}], "\n", 
+  RowBox[{"(*", 
+   RowBox[{"Source", " ", "free", " ", "model"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"AcousticModel", "[", 
+     RowBox[{"p_", ",", "X_List", ",", "\[Rho]_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"a", ",", "factor"}], "}"}], ",", 
+      RowBox[{
+       RowBox[{"factor", "=", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "1"}], "/", "\[Rho]"}], "*", 
+         RowBox[{"IdentityMatrix", "[", 
+          RowBox[{"Length", "[", "X", "]"}], "]"}]}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"a", "=", 
+        RowBox[{"PiecewiseExpand", "[", 
+         RowBox[{"Piecewise", "[", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"factor", ",", "True"}], "}"}], "}"}], "]"}], "]"}]}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Inactive", "[", "Div", "]"}], "[", 
+        RowBox[{
+         RowBox[{"a", ".", 
+          RowBox[{
+           RowBox[{"Inactive", "[", "Grad", "]"}], "[", 
+           RowBox[{"p", ",", "X"}], "]"}]}], ",", "X"}], "]"}]}]}], "]"}]}], 
+   "*)"}]}]}], "Code",
+ CellLabel->"In[57]:=",ExpressionUUID->"f72898e2-7326-44f2-a2f4-116751221619"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PlotPoint2dAudio", "[", 
+   RowBox[{"speakerPoint_", ",", " ", "leftEar_", ",", " ", "rightEar_"}], 
+   "]"}], ":=", "\n", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"speakerPointLoc", "=", "speakerPoint"}], ",", " ", 
+      RowBox[{"leftEarPointLoc", "=", "leftEar"}], ",", " ", 
+      RowBox[{"rightEarPointLoc", "=", "rightEar"}]}], "}"}], ",", "\n", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"Print", "[", 
+       RowBox[{"speakerPointLoc", "[", 
+        RowBox[{"[", "0", "]"}], "]"}], "]"}], ";"}], "*)"}], "\n", 
+    RowBox[{"ListPlot", "[", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Labeled", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"speakerPointLoc", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ",", " ", 
+            RowBox[{"speakerPointLoc", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", " ", 
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<Sound Source\>\"", ",", " ", 
+            RowBox[{"FontSize", "\[Rule]", "12"}], ",", " ", 
+            RowBox[{"FontFamily", "\[Rule]", "\"\<Helvetica\>\""}]}], "]"}]}],
+          "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"Labeled", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"leftEarPointLoc", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ",", " ", 
+            RowBox[{"leftEarPointLoc", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", " ", 
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<Left Ear\>\"", ",", " ", 
+            RowBox[{"FontSize", "\[Rule]", "12"}], ",", " ", 
+            RowBox[{"FontFamily", "\[Rule]", "\"\<Helvetica\>\""}]}], "]"}]}],
+          "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"Labeled", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"rightEarPointLoc", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ",", " ", 
+            RowBox[{"rightEarPointLoc", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", " ", 
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<Right Ear\>\"", ",", " ", 
+            RowBox[{"FontSize", "\[Rule]", "12"}], ",", " ", 
+            RowBox[{"FontFamily", "\[Rule]", "\"\<Helvetica\>\""}]}], "]"}]}],
+          "]"}]}], "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"PlotTheme", "\[Rule]", "\"\<Scientific\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"PlotRange", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "100"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "100"}], "}"}]}], "}"}]}], ","}], "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"PointSize", "[", "Large", "]"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"ScalingFunctions", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"Identity", ",", "Identity"}], "}"}]}], ",", " ", 
+      "\[IndentingNewLine]", 
+      RowBox[{"AspectRatio", "\[Rule]", "1"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"PlotRangePadding", "\[Rule]", "10"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"PlotLabel", "\[Rule]", 
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<Location of Sound Source & Ears\>\"", ",", " ", 
+         RowBox[{"FontSize", "\[Rule]", "18"}], ",", " ", 
+         RowBox[{"FontFamily", "\[Rule]", "\"\<Helvetica\>\""}]}], "]"}]}], 
+      ",", "\n", 
+      RowBox[{"FrameLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<Position X (cm.)\>\"", ",", " ", 
+           RowBox[{"FontSize", "\[Rule]", "12"}], ",", " ", 
+           RowBox[{"FontFamily", "\[Rule]", "\"\<Helvetica\>\""}]}], "]"}], 
+         ",", " ", 
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<Position Y (cm.)\>\"", ",", " ", 
+           RowBox[{"FontSize", "\[Rule]", "12"}], ",", " ", 
+           RowBox[{"FontFamily", "\[Rule]", "\"\<Helvetica\>\""}]}], "]"}]}], 
+        "}"}]}]}], "]"}]}], "\n", "]"}]}]], "Code",
+ CellLabel->"In[59]:=",ExpressionUUID->"e13e4203-5e38-487c-8160-8e477f7dcac5"]
+},
+WindowSize->{808, 607},
+WindowMargins->{{Automatic, -50}, {-25, Automatic}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 543, 14, 72, "Code",ExpressionUUID->"abefec7a-7db8-4507-b314-b6432d8eb278"],
+Cell[1104, 36, 1163, 30, 72, "Code",ExpressionUUID->"51f3703a-79d7-46e1-aaf3-28d610dc57a5"],
+Cell[2270, 68, 1225, 34, 52, "Code",ExpressionUUID->"ef9b7c98-288a-4c55-bf78-4e369a384c47"],
+Cell[3498, 104, 699, 18, 72, "Code",ExpressionUUID->"e7992c0f-b63a-4a3e-ac0a-61e2ef09a7e2",
+ CellID->1677618085],
+Cell[4200, 124, 348, 9, 75, "Code",ExpressionUUID->"9ddf05be-aff5-4eb8-b92a-27cdf9295f7c"],
+Cell[4551, 135, 557, 16, 93, "Code",ExpressionUUID->"dfcf64fe-30b8-4811-b67c-b45a14dd51b9"],
+Cell[5111, 153, 2795, 81, 205, "Code",ExpressionUUID->"f72898e2-7326-44f2-a2f4-116751221619"],
+Cell[7909, 236, 4321, 100, 357, "Code",ExpressionUUID->"e13e4203-5e38-487c-8160-8e477f7dcac5"]
+}
+]
+*)
+
